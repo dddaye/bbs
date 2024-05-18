@@ -36,7 +36,7 @@ const Cart = () => {
     return (
         <div>
         <h1 className='my-5'>장바구니</h1>
-        <Table>
+        <Table striped bordered hover>
             <thead>
                 <tr>
                     <td colSpan={2}>도서 제목</td>

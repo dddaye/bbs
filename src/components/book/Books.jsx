@@ -66,7 +66,7 @@ const Books = () => {
                     <InputGroup>
                     <Form.Control onChange={(e)=>SetQuery(e.target.value)}
                         placeholder='검색어' value={query}/>
-                    <Button type='submit' className="btn btn-warning">검색</Button>
+                    <Button type='submit' variant="outline-dark">검색</Button>
                     </InputGroup>
                 </form>
             </Col>
@@ -88,9 +88,9 @@ const Books = () => {
                 </Col>)}
         </Row>
         <div className='text-center my-3'>
-            <Button onClick={()=>SetPage(page-1)} disabled={page===1} className="btn btn-warning">이전</Button>
+            <Button onClick={()=>SetPage(page-1)} disabled={page===1} variant="outline-dark">이전</Button>
             <span className='mx-2'>{page}</span>
-            <Button onClick={()=>SetPage(page+1)} className="btn btn-warning">다음</Button>
+            <Button onClick={()=>SetPage(page+1)} variant="outline-dark">다음</Button>
         </div>
         </div>
     )
