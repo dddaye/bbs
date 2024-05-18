@@ -13,6 +13,7 @@ const Locals = () => {
     const [query, SetQuery] = useState('인하대학교');
     const [page, SetPage] = useState(1);
     const [locals, setLocals] = useState([]);
+    const [isend, setIsend] = useState(false);
     
     const callAPI = async() => {
         setLoading(true);
@@ -22,7 +23,8 @@ const Locals = () => {
         };
         const res=await axios.get(url, config);
         setLocals(res.data.documents);
-        console.log(res.data.documents);
+        setIsend(res.data.meta.is_end);
+        //console.log(res.data.documents);
         setLoading(false);
     }
 
@@ -49,7 +51,7 @@ const Locals = () => {
 
     useEffect(()=>{
         callAPI();
-    }, []);
+    }, [page]);
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -102,7 +104,7 @@ const Locals = () => {
             <div className='text-center my-3'>
             <Button onClick={()=>SetPage(page-1)} disabled={page===1} variant="outline-dark">이전</Button>
             <span className='mx-2'>{page}</span>
-            <Button onClick={()=>SetPage(page+1)} variant="outline-dark">다음</Button>
+            <Button onClick={()=>SetPage(page+1)} disabled={isend} variant="outline-dark">다음</Button>
             </div>
         </div>
         

@@ -14,6 +14,8 @@ const Books = () => {
     const [query, SetQuery] = useState('자바');
     const [loading, setLoading] = useState(false);
     const [books, setBooks] = useState([]);
+    const [isend, setIsend] = useState(false);
+    
     const callAPI = async() => {
         setLoading(true);
         const url=`https://dapi.kakao.com/v3/search/book?target=title&query=${query}&size=12&page=${page}`;
@@ -23,6 +25,7 @@ const Books = () => {
         const res=await axios.get(url, config);
         console.log(res.data);
         setBooks(res.data.documents);
+        setIsend(res.data.meta.is_end);
         setLoading(false);
     }
 
@@ -90,7 +93,7 @@ const Books = () => {
         <div className='text-center my-3'>
             <Button onClick={()=>SetPage(page-1)} disabled={page===1} variant="outline-dark">이전</Button>
             <span className='mx-2'>{page}</span>
-            <Button onClick={()=>SetPage(page+1)} variant="outline-dark">다음</Button>
+            <Button onClick={()=>SetPage(page+1)} disabled={isend} variant="outline-dark">다음</Button>
         </div>
         </div>
     )
