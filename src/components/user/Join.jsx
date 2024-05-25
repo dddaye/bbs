@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {Row, Col, Form, InputGroup, Card, Button} from 'react-bootstrap';
-import {app} from '../firebaseInit'
+import {app} from '../../firebaseInit'
 import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword} from 'firebase/auth'
 import { useNavigate } from 'react-router-dom';
 

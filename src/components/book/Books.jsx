@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import {Row, Col, Card, InputGroup, Form, Button} from 'react-bootstrap'
-import { BsBagHeart } from "react-icons/bs";
+import { IoLogoOctocat } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 import {app} from '../../firebaseInit'
 import {getDatabase, ref, set, get} from 'firebase/database';
@@ -84,8 +84,8 @@ const Books = () => {
                         </Card.Body>
                         <Card.Footer>
                             <div className='ellipsis'>{book.title}</div>
-                            <BsBagHeart onClick={()=>onClickCart(book)}
-                                style={{cursor:'pointer', fontSize:'20px', color:'orange'}}/>
+                            <IoLogoOctocat onClick={()=>onClickCart(book)}
+                                style={{cursor:'pointer', fontSize:'25px', color:'purple'}}/>
                         </Card.Footer>
                     </Card>
                 </Col>)}

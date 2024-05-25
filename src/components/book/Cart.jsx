@@ -47,7 +47,7 @@ const Cart = () => {
             </thead>
             <tbody>
                 {books.map(book=>
-                    <tr key={book.isbn}>
+                    <tr key={book.isbn} className='text-center'>
                         <td><img src={book.thumbnail} width="50px"/></td>
                         <td>{book.title}</td>
                         <td>{book.price.toLocaleString()} 원</td>
