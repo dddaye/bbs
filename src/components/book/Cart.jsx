@@ -38,7 +38,7 @@ const Cart = () => {
         <h1 className='my-5'>장바구니</h1>
         <Table striped bordered hover>
             <thead>
-                <tr>
+                <tr className='text-center'>
                     <td colSpan={2}>도서 제목</td>
                     <td>가격</td>
                     <td>저자</td>
