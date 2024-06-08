@@ -12,12 +12,13 @@ import Mypage from './user/Mypage';
 import ListPage from './bbs/ListPage';
 import InsertPage from './bbs/InsertPage';
 import ReadPage from './bbs/ReadPage';
+import UpdatePage from './bbs/UpdatePage';
 
 const Menu = () => {
     const navi = useNavigate();
     const onLogout = (e) => {
         e.preventDefault();
-        if(window.confirm("로그아웃 하실껀가요?"));
+        if(window.confirm("로그아웃 하실래요?"));
         sessionStorage.clear();
         navi('/');
     }
@@ -66,6 +67,7 @@ const Menu = () => {
                 <Route path='/bbs' element={<ListPage/>}/>
                 <Route path='/bbs/insert' element={<InsertPage/>}/>
                 <Route path='/bbs/read/:id' element={<ReadPage/>}/>
+                <Route path='/bbs/update/:id' element={<UpdatePage/>}/>
             </Routes>
         </>
       
